@@ -127,12 +127,11 @@
     
     
     
+    var dt = new Date();
+    $('.setYear').text(dt.getYear()); 
     
     
-    
-    
-    
-    
+
     
     
 }(jQuery));
