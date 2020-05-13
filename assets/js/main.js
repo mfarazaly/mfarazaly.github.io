@@ -128,7 +128,7 @@
     
     
     var dt = new Date();
-    $('.setYear').text(dt.getYear()); 
+    $('.setYear').text(dt.getFullYear()); 
     
     
 
