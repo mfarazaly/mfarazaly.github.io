@@ -6,7 +6,7 @@
   <title>Projects — M Faraz Ali</title>
   <meta name="description" content="Projects by M Faraz Ali: System Widget, a Windows CPU/GPU monitor, this website, and earlier experiments.">
   <link rel="canonical" href="https://mfarazaly.github.io/projects.html">
-  <meta name="theme-color" content="#06080c">
+  <meta name="theme-color" content="#07090d">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects — M Faraz Ali">
@@ -17,9 +17,10 @@
 
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body id="top">
 
 <a class="skip" href="#main">Skip to content</a>
 
@@ -35,8 +36,9 @@
     </button>
 
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="projects.html" aria-current="page">Projects</a>
       <a href="index.html#about">About</a>
+      <a href="index.html#work">Work</a>
+      <a href="projects.html" aria-current="page">Projects</a>
       <a href="index.html#contact">Contact</a>
       <a class="nav-gh" href="https://github.com/mfarazaly" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
@@ -44,6 +46,7 @@
       </a>
     </nav>
   </div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 </header>
 
 <main id="main">
@@ -67,7 +70,7 @@
 
         <article class="project featured">
           <div class="project-media">
-            <img src="assets/img/widget-rings.png" alt="System Widget's gauge-ring theme" width="834" height="212">
+            <img src="assets/img/widget-rings.png" alt="System Widget's gauge-ring theme, showing six circular gauges" width="834" height="212">
           </div>
           <div class="project-body">
             <div class="project-top">
@@ -166,14 +169,40 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <p>© <span data-year>2026</span> M Faraz Ali · Karachi, Pakistan</p>
-    <nav class="footer-links" aria-label="Footer">
-      <a href="index.html">Home</a>
-      <a href="system-widget.html">System Widget</a>
-      <a href="https://github.com/mfarazaly" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:mfarazaly@gmail.com">Email</a>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <img src="assets/img/icon.png" width="34" height="34" alt="">
+        <span>M Faraz Ali</span>
+      </a>
+      <p>Websites and Windows tools, built to last longer than the trend that inspired them.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Site">
+      <h4>Site</h4>
+      <a href="index.html#about">About</a>
+      <a href="index.html#work">Work</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
+
+    <nav class="footer-col" aria-label="Elsewhere">
+      <h4>Elsewhere</h4>
+      <a href="https://github.com/mfarazaly" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/muhammad-faraz-ali/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:mfarazaly@gmail.com">Email</a>
+      <a href="system-widget.html">System Widget</a>
+    </nav>
+
+    <a class="to-top" href="#top">
+      Back to top
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+    </a>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <p>© <span data-year>2026</span> M Faraz Ali · Karachi, Pakistan</p>
+    <p>Hand-written HTML &amp; CSS · No cookies, no analytics</p>
   </div>
 </footer>
 

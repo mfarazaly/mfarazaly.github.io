@@ -3,21 +3,47 @@
 Personal site for **M Faraz Ali** — web developer and toolmaker.
 Live at <https://mfarazaly.github.io>.
 
-Plain HTML, one CSS file and about forty lines of JavaScript. No framework, no
-build step, no external fonts, no tracking. GitHub Pages serves it straight from
-`main`.
+Plain HTML, one CSS file and one small JavaScript file. No framework, no build
+step, no tracking. Fonts are self-hosted (Inter), so the site makes no
+third-party requests at all. GitHub Pages serves it from `master`.
 
 ## Pages
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Home: hero, featured project, about, contact |
-| `projects.html` | Every project, one card each |
-| `system-widget.html` | Product page for System Widget |
+| `index.html` | Profile-first home: hero, about, services, System Widget carousel, contact |
+| `projects.html` | Project index; cards link to write-ups |
+| `system-widget.html` | Full product page: gallery, features, install, FAQ, releases |
 | `404.html` | Served automatically by GitHub Pages |
 
 Supporting files: `assets/css/site.css`, `assets/js/site.js`, `assets/img/`
-(screenshots, favicons, Open Graph image), `robots.txt`, `sitemap.xml`.
+(screenshots, favicons, Open Graph images), `assets/fonts/` (Inter variable
+font, latin + latin-ext subsets), `robots.txt`, `sitemap.xml`.
+
+## Fonts
+
+The two `Inter-*.woff2` files are self-hosted subsets. `site.css` declares the
+`@font-face` rules with `font-display: swap`; the latin subset is preloaded in
+each page head. If the font files are replaced, keep the same names so the
+preload links keep working.
+
+## Screenshot carousel
+
+The carousel is plain JavaScript (`assets/js/site.js`) — no dependency, no
+autoplay. Slides live inside `.carousel-stage`; only one has `.is-active`.
+
+- Each `<figure class="slide">` carries `data-fit` (`bar`, `wide`, `square`,
+  `tall`), `data-title` and `data-text`.
+- The controller copies the current slide's `data-fit` onto the carousel root,
+  and the stylesheet uses that to transition the stage height. This is what
+  makes the mobile stage fit portrait screenshots without leaving dead space.
+- Captions are rendered in the bar below the stage from `data-title` /
+  `data-text`; dots and the counter are generated from the slide list.
+- Controls: previous/next buttons, dots, left/right arrows, Home/End, and
+  horizontal swipe. There are no animations that hide content before JS runs.
+
+To add a slide, copy a `<figure>`, set its image dimensions and `data-fit`, and
+add it before `.stage-taskbar`. The dots and counter update automatically.
 
 ## Adding a project
 
@@ -34,7 +60,7 @@ The version number appears in a handful of places:
 
 - `system-widget.html` — the `.badge.live` badge, the download links (hero and
   final CTA), the release notes, and `~11 MB` if the size changed.
-- `index.html` — the hero button chip and the feature card chips.
+- `index.html` — the version chip in the System Widget section.
 - `projects.html` — the featured card chips.
 - `sitemap.xml` — `lastmod` dates.
 
@@ -49,8 +75,8 @@ python -m http.server 8000
 # then open http://127.0.0.1:8000
 ```
 
-Opening the files directly with `file://` also works; the only thing that needs
-a server is nothing, actually — there is no fetch, no module import, no API.
+Opening the files directly with `file://` mostly works too — there is no fetch
+and no module import — but a local server matches GitHub Pages more closely.
 
 ## Licence
 

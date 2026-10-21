@@ -6,13 +6,14 @@
   <title>Page not found — M Faraz Ali</title>
   <meta name="description" content="That page doesn't exist. Head back home or browse the projects.">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#06080c">
+  <meta name="theme-color" content="#07090d">
 
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body id="top">
 
 <header class="site-header is-scrolled">
   <div class="wrap header-inner">
@@ -20,9 +21,15 @@
       <img src="assets/img/icon.png" width="34" height="34" alt="">
       <span>M Faraz Ali</span>
     </a>
-    <nav class="nav" aria-label="Main">
-      <a href="projects.html">Projects</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Main">
       <a href="index.html#about">About</a>
+      <a href="index.html#work">Work</a>
+      <a href="projects.html">Projects</a>
       <a href="index.html#contact">Contact</a>
     </nav>
   </div>
