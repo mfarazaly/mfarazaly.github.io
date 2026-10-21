@@ -68,16 +68,6 @@ Screenshots in `assets/img/widget-*.png` are real captures of the running app,
 taken at 150 % UI scale with the window positioned on a dark background. They
 are PNGs with transparency, so they sit cleanly on the dark cards.
 
-## Preview locally
-
-```powershell
-python -m http.server 8000
-# then open http://127.0.0.1:8000
-```
-
-Opening the files directly with `file://` mostly works too — there is no fetch
-and no module import — but a local server matches GitHub Pages more closely.
-
 ## Licence
 
 The text and images in this repository are © 2026 M Faraz Ali. The System Widget
